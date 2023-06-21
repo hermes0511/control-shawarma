@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+     <?!= include('CSS'); ?>
+   
+     </head>
+  
+  <body>
+
+   <header>
+      <nav>
+         <a href="./index.html"> <img src="./PRUEBA_GOOGLE/images/logoshawa .jpg" alt="logo"></a>
+      </nav>
+   </header>
+   <main></main>
+   <h1 class="title">Control de Ventas</h1>
+
+   <form class="pedidos" id="pedidos">
+    <div class="container1">
+     <div class="pedidos_producto">
+      <label >Ingrese el codigo</label >
+      <input class="pedidos_input" id="codi" name="codigo" list="datalist" placeholder="Type to search..." onchange="actualizarInfo(this)">
+       <datalist id="datalist">
+       
+       </datalist>
+        </div>
+
+     <div class="pedidos_cantidad" >  
+  <label >Cantidad</label >
+      <input class="pedidos_input2" type="number">
+   </div>
+    <div class="pedidos_producto" id="produc">
+    
+       </div>
+ <div class="pedidos_precio" id="precio" >  
+  
+   </div>
+</div>
+
+<div class="container2">
+        <div class="pedidos_bebi" id="bebi"> 
+         <label >Ingrese el codigo</label >
+          <input class="pedidos_input" id="codi" name="codigo" list="datalist" placeholder="Type to search..." onchange="actualizarInfo(this)">
+       <datalist id="datalistbebi">
+       
+       </datalist>
+       </div>
+       <div class="pedidos_cantidad" >  
+  <label >Cantidad</label >
+      <input class="pedidos_input2" type="number">
+   </div>
+    <div class="pedidos_producto" id="produc_bebi">
+    
+       </div>
+ <div class="pedidos_precio" id="precio_bebi" >  
+  
+   </div>
+        </div>
+   </form>
+   <button class="btn" id="btn"> Run It!</button>
+   <footer></footer>
+
+   <?!= include('js'); ?>
+  </body>
+</html>

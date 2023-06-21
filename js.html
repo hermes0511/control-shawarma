@@ -1,0 +1,62 @@
+ <script>
+
+window.addEventListener("load", loadInfoData);
+const codiproduc = document.getElementById("datalist");
+const codibebi = document.getElementById("datalistbebi");
+document.getElementById("btn").addEventListener("click",doStuff);
+
+
+function loadInfoData(){
+
+google.script.run
+.withSuccessHandler(cargarDato)
+.dataPedidos()
+
+}
+
+
+function cargarDato(dataProducto){
+console.log(dataProducto)
+const inputCodigos= document.getElementById("datalist");
+const inputCodigoBebi= document.getElementById("datalistbebi");
+dataProducto.forEach(codigo=>{
+  const option = document.createElement("option");
+  const optionBebi = document.createElement("optionbebi");
+  option.value=codigo[0];
+  option.text=codigo[0] +' , ' + codigo[1];
+  option.dataset.producto=codigo[1];
+  option.dataset.precio=codigo[2];
+  optionBebi.value=codigo[6]
+  option.text=codigo[6] +' , ' + codigo[7];
+  inputCodigos.appendChild( option );
+
+
+});
+
+} 
+
+
+
+function doStuff(){
+
+  //var pedidos={};
+
+  //pedidos.codigo = document.getElementById("codi").value;
+ 
+
+  //google.script.run.userClicked(pedidos);
+  //document.getElementById("codi").value="";
+
+}
+
+function actualizarInfo(datalist){
+  for(let i=0; i< codiproduc.options.length; i++){
+    if(codiproduc.options[i].value === datalist.value ){
+      document.getElementById("produc").innerHTML = codiproduc.options[i].getAttribute("data-producto");  
+       document.getElementById("precio").innerHTML = codiproduc.options[i].getAttribute("data-precio");    
+    }
+
+  }
+}
+
+   </script>
